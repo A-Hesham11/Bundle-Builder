@@ -22,7 +22,7 @@ export function ProductVariantSelector({
             type="button"
             onClick={() => onChange(v.id)}
             className={cn(
-              "inline-flex h-6.5 w-16.5 items-center gap-1 rounded-md border py-px px-0.75 text-[11.5px] font-semibold transition-colors cursor-pointer",
+              "inline-flex h-6.5 w-17 items-center gap-0.5 rounded-md border py-px px-0.75 text-[11.5px] font-semibold transition-colors cursor-pointer",
               active
                 ? "border-[#0AA288] text-heading bg-[#1DF0BB0A]"
                 : "border-[#e5e4e7] text-heading hover:border-[#0AA288]",
