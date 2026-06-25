@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-text: var(--text);
+  --color-heading: var(--text-h);
+  --color-page: var(--bg);
+  --color-border: var(--border);
+  --color-light-bg: var(--light-bg);
+  --color-code-bg: var(--code-bg);
+  --color-accent: var(--accent);
+  --color-primary: var(--primary);
+  --color-accent-bg: var(--accent-bg);
+  --color-accent-border: var(--accent-border);
+  --color-social-bg: var(--social-bg);
+
+  --font-sans: var(--sans);
+  --font-heading: var(--heading);
+  --font-mono: var(--mono);
+
+  --shadow-card: var(--shadow);
+}
+
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #ffffff;
+  --border: #e5e4e7;
+  --light-bg: #edf4ff;
+  --code-bg: #f4f3ec;
+  --accent: #4e2fd2;
+  --primary: #4e2fd2;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: #4e2fd2b2;
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: "Inter", "Roboto", "Tajawal", system-ui, "Segoe UI", sans-serif;
+  --heading: "Inter", "Roboto", "Tajawal", system-ui, "Segoe UI", sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 145%;
+  font-weight: 400;
+  letter-spacing: 0.18px;
+
+  color-scheme: light;
+  color: var(--text);
+  background: var(--bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-weight: 400;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100svh;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+p {
+  margin: 0;
+}
+
+strong,
+b {
+  font-weight: 800;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 420ms ease-out both;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 480ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-slide-in-right {
+    animation: none;
+  }
+}
