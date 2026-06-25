@@ -45,7 +45,7 @@ export function BuilderStep({ step, index }: BuilderStepProps) {
       {isOpen ? (
         <div className="px-4 py-5">
           {step.products.length ? (
-            <div className="mb-4.5 grid grid-cols-1 justify-items-center gap-3.5 min-[720px]:grid-cols-3 min-[998px]:grid-cols-1 min-[1192px]:grid-cols-2">
+            <div className={cn("mb-4.5 flex flex-wrap justify-center gap-3.5")}>
               {step.products.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
@@ -58,7 +58,7 @@ export function BuilderStep({ step, index }: BuilderStepProps) {
 
           <Button
             onClick={goToNextStep}
-            className="border-2 border-accent bg-transparent w-2/5! mx-auto block min-h-9.75! text-[18px]! font-medium! text-accent!"
+            className="border-2 border-accent bg-transparent w-full! max-w-62.5! mx-auto block min-h-9.75! text-[18px]! font-medium! text-accent!"
           >
             {step.nextLabel}
           </Button>

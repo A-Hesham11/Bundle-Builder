@@ -12,7 +12,7 @@ export function BundleBuilder() {
         <BuilderAccordion />
       </section>
 
-      <div className="animate-slide-in-right max-[998px]:animate-fade-up">
+      <div className="animate-slide-in-right max-[998px]:animate-fade-up sticky top-6 lg:top-8">
         <ReviewPanel />
       </div>
     </main>

@@ -131,6 +131,7 @@ code {
   background: var(--code-bg);
 }
 
+/* ANIMATION */
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -168,4 +169,20 @@ code {
   .animate-slide-in-right {
     animation: none;
   }
+}
+
+@keyframes productImageChange {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+.animate-product-image {
+  animation: productImageChange 250ms ease-out;
 }

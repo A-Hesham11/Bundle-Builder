@@ -1,7 +1,6 @@
 import {
   CamDoorbell,
   Cameras,
-  CamFloodlight,
   CamFloodlightBlack,
   CamFloodlightWhite,
   CamPan,
@@ -89,7 +88,7 @@ export const bundleSteps: BundleStep[] = [
         title: "Wyze Cam Floodlight v2",
         description:
           "2K floodlight camera with a 160° wide-angle view for your garage.",
-        image: CamFloodlight,
+        image: CamFloodlightWhite,
         learnMore: "Learn More",
         compareAtPrice: 89.98,
         price: 69.98,

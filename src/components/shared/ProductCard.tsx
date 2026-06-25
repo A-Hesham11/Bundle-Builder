@@ -17,22 +17,33 @@ export function ProductCard({ product }: ProductCardProps) {
     decreaseQuantity,
   } = useProductCard({ product });
 
+  const imageSrc =
+    activeVariantId?.toLowerCase() === "white"
+      ? product.image
+      : (activeVariant?.image ?? product.image);
+
   return (
     <article
       className={cn(
         "group relative grid grid-cols-10 overflow-hidden rounded-[18px] border bg-page text-left transition",
         "border-border shadow-none",
+        "w-full", // default: full width
+        "min-[560px]:w-[calc(50%-7px)]", // 2 cols
+        "min-[720px]:w-[calc(33.333%-10px)]", // 3 cols
+        "min-[998px]:w-full", // back to 1 col
+        "min-[1192px]:w-[calc(50%-8px)]", // 2 cols again
         "max-[720px]:min-h-0 max-[720px]:rounded-2xl",
         isSelected && "border-accent shadow-[0_0_0_2px_var(--accent-border)]",
       )}
     >
       {product.badge ? <ProductBadge>{product.badge}</ProductBadge> : null}
 
-      <div className="relative col-span-full flex h-38.5 items-center justify-center px-6 pt-6 max-[720px]:h-33 min-[998px]:col-span-3">
+      <div className="relative col-span-full flex h-38.5 items-center justify-center pt-6 max-[720px]:h-33 min-[998px]:col-span-3">
         <img
-          src={activeVariant?.image ?? product.image}
+          key={imageSrc}
+          src={imageSrc}
           alt={product.title}
-          className="h-34.25 w-25.25 scale-120 object-contain transition duration-200 group-hover:scale-125"
+          className="h-25.25 w-25.25  object-contain transition duration-200 group-hover:scale-105 animate-product-image"
         />
       </div>
 
